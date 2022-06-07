@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Busca</title>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body class="bodyBusca">
+    
+    <form action="/busca" method="GET">
+    <input name="busca" type="text" class = "txtBusca" id="txtBusca" placeholder= <%=input%> required/></br>
+    </form>
+    
+
+
+
+<main>
+
+    
+    <% for (contagem of contagem){%>
+        <div class="containerDashBoard">
+            <H3> Insights: </H3>
+            
+            <H4> Quantidade de tweets no banco de dados: <strong><%= contagem.id  %></strong></H4>
+            
+        </div>
+        <% } %>
+  
+  <% for (item of lista) {%>
+    <div class="container">
+        
+        
+      <div class="campoFoto">
+        <img id="userImg" src= <%= item.profileImgUrl%> />
+      </div>
+      <div class="nomeUser"><strong><%= item.name %></strong></div>
+      <a  href="https://twitter.com/user/status/<%= item.id_str%>"><button class="twitUrl" type="submit"> <strong> Ver tweet </strong></button></a>
+   
+      <div class="text"><%= item.text %></div>
+     
+      <div class="data"><%= item.data%></div>
+
+
+    </div>
+    <br>
+
+    <% } %> 
+
+  </main>
+
+
+
+  </body>
+
+  
+</html>
